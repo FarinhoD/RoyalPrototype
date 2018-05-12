@@ -7,12 +7,14 @@ public class PlayerMovement : MonoBehaviour {
     public float speed;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate ()
+    {
         movement();
     }
 
