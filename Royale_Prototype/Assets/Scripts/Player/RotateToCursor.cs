@@ -5,7 +5,6 @@ using UnityEngine;
 public class RotateToCursor : MonoBehaviour {
 
     Vector3 mousePos;
-    Camera cam;
     Rigidbody2D rid;
 
 
@@ -13,7 +12,6 @@ public class RotateToCursor : MonoBehaviour {
 	void Start ()
     {
         rid = GetComponent<Rigidbody2D>();
-        cam = Camera.main;
 	}
 	
 	// Update is called once per frame

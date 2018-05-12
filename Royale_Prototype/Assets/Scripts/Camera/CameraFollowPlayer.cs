@@ -5,14 +5,12 @@ using UnityEngine;
 public class CameraFollowPlayer : MonoBehaviour {
 
     GameObject player;
-    PlayerMovement pm;
     bool followPlayer = true;
     Camera cam;
 
 	// Use this for initialization
 	void Start ()
     {
-        pm = GetComponent<PlayerMovement>();
         player = GameObject.FindGameObjectWithTag("Player");
         cam = Camera.main;
 	}
