@@ -21,12 +21,9 @@ public class doorAnim : MonoBehaviour {
         //if a character has entered the collider and is pressing E
         if (allowedToOpen && Input.GetKeyDown(KeyCode.E)) {
 
-            Debug.Log("Pressed E");
-
             //Inside house, door is open inward.  Close door.
             if (isInside() && anim.GetBool("openDoorInward"))
             {
-                Debug.Log("Inside house, door is open inward.  Close door.");
                 anim.SetBool("openDoorInward", false);
                 anim.SetBool("openDoorOutward", false);
                 anim.SetBool("isInside", true);
@@ -34,7 +31,6 @@ public class doorAnim : MonoBehaviour {
             //Inside house, door is closed.  Open outward.
             else if (isInside() && !anim.GetBool("openDoorOutward") && !anim.GetBool("openDoorInward"))
             {
-                Debug.Log("Inside house, door is closed.  Open outward.");
                 anim.SetBool("openDoorInward", false);
                 anim.SetBool("openDoorOutward", true);
                 anim.SetBool("isInside", true);
@@ -42,7 +38,6 @@ public class doorAnim : MonoBehaviour {
             //Inside house, door is open outward.  Close door.
             else if (isInside() && anim.GetBool("openDoorOutward") && !anim.GetBool("openDoorInward"))
             {
-                Debug.Log("Inside house, door is open outward.  Close door.");
                 anim.SetBool("openDoorInward", false);
                 anim.SetBool("openDoorOutward", false);
                 anim.SetBool("isInside", true);
@@ -50,7 +45,6 @@ public class doorAnim : MonoBehaviour {
             //Outside house, door is open outward.  Close door.
             else if (!isInside() && anim.GetBool("openDoorOutward"))
             {
-                Debug.Log("Outside house, door is open outward.  Close door.");
                 anim.SetBool("openDoorInward", false);
                 anim.SetBool("openDoorOutward", false);
                 anim.SetBool("isInside", false);
@@ -58,7 +52,6 @@ public class doorAnim : MonoBehaviour {
             //Outside house, door is closed.  Open Inward.
             else if (!isInside() && !anim.GetBool("openDoorOutward") && !anim.GetBool("openDoorInward"))
             {
-                Debug.Log("Outside house, door is closed.  Open Inward.");
                 anim.SetBool("openDoorInward", true);
                 anim.SetBool("openDoorOutward", false);
                 anim.SetBool("isInside", true);
