@@ -13,10 +13,7 @@ public class Mover : MonoBehaviour {
     // Use this for initialization
     private void FixedUpdate()
     {
-        Vector2 fwd = transform.TransformDirection(Vector2.up);
-
-
-        stop = Physics2D.Raycast(this.transform.position, fwd);
+        
 
 
 
