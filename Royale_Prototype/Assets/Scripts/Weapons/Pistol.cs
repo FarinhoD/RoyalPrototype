@@ -6,9 +6,10 @@ public class Pistol : Weapons {
 
     public Transform shotSpawn;
 
+
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -17,7 +18,7 @@ public class Pistol : Weapons {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(projectile, shotSpawn.position, shotSpawn.rotation);
+            Instantiate(projectile, shotSpawn.position, shotSpawn.rotation );
         }
 	}
 }
