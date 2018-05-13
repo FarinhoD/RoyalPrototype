@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class HideRoof : MonoBehaviour {
 
-    Collider cd;
     SpriteRenderer sr;
     GameObject player;
     float transparency = 1f;
     float timer = 1.0f;
     public float duration;
+    bool isInside = false;
 
     private bool roofHidden = false;
 
 	// Use this for initialization
 	void Start () {
-
         sr = GetComponent<SpriteRenderer>();
-        sr.enabled = true;
-
     }
 	
 	// Update is called once per frame
@@ -40,6 +37,7 @@ public class HideRoof : MonoBehaviour {
         {
             timer = 0;
             roofHidden = true;
+            isInside = true;
         }
     }
     private void OnTriggerExit2D(Collider2D player)
@@ -48,6 +46,7 @@ public class HideRoof : MonoBehaviour {
         {
             timer = 0;
             roofHidden = false;
+            isInside = false;
         }
     }
 
@@ -77,5 +76,10 @@ public class HideRoof : MonoBehaviour {
             transparency = timer * duration;
             sr.color = new Color(1f, 1f, 1f, transparency);
         }
+    }
+
+    public bool isPlayerInside ()
+    {
+        return isInside;
     }
 }
