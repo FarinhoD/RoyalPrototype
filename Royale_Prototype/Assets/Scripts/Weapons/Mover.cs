@@ -4,20 +4,38 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour {
 
-    BoxCollider2D bc;
+    public LayerMask LM;
 
+    BoxCollider2D bc;
+    public bool stop;
     float timer = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void FixedUpdate()
+    {
+        
+
+
+
+    }
+
+    void Start () {
+
         bc = GetComponent<BoxCollider2D>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (stop == true)
+        {
+            Destroy(gameObject);
+        }
+
         timer += Time.deltaTime;
 
-        transform.Translate(Vector2.right * Time.deltaTime * 20f );
+        transform.Translate(Vector2.up * Time.deltaTime * 20f );
 
      if (timer > 1.5)
         {
@@ -26,6 +44,13 @@ public class Mover : MonoBehaviour {
 
 	}
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag  == ("Player")) ;
+        {
+            Destroy(gameObject);
+        }
+    }
 
 
 }
