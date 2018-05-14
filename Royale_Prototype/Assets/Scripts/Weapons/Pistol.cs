@@ -7,14 +7,20 @@ public class Pistol : Weapons {
     public Transform shotSpawn;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// Use this for initialization
 	void Start () {
 		
 =======
+=======
+>>>>>>> parent of 763eb22... animation updates, weapons script update, particles, uzi
 
 	// Use this for initialization
 	void Start () {
         
+<<<<<<< HEAD
+>>>>>>> parent of 763eb22... animation updates, weapons script update, particles, uzi
+=======
 >>>>>>> parent of 763eb22... animation updates, weapons script update, particles, uzi
 	}
 	
@@ -28,6 +34,9 @@ public class Pistol : Weapons {
             Instantiate(projectile, shotSpawn.position, shotSpawn.rotation);
 =======
             Instantiate(projectile, shotSpawn.position, shotSpawn.rotation );
+<<<<<<< HEAD
+>>>>>>> parent of 763eb22... animation updates, weapons script update, particles, uzi
+=======
 >>>>>>> parent of 763eb22... animation updates, weapons script update, particles, uzi
         }
 	}
