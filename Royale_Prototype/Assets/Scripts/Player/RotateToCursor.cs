@@ -5,13 +5,13 @@ using UnityEngine;
 public class RotateToCursor : MonoBehaviour {
 
     Vector3 mousePos;
-    Rigidbody2D rid;
+
 
 
 	// Use this for initialization
 	void Start ()
     {
-        rid = GetComponent<Rigidbody2D>();
+
 	}
 	
 	// Update is called once per frame
