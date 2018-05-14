@@ -5,13 +5,13 @@ using UnityEngine;
 public class RotateToCursor : MonoBehaviour {
 
     Vector3 mousePos;
-    Rigidbody2D rid;
+
 
 
 	// Use this for initialization
 	void Start ()
     {
-        rid = GetComponent<Rigidbody2D>();
+
 	}
 	
 	// Update is called once per frame
@@ -30,6 +30,6 @@ public class RotateToCursor : MonoBehaviour {
         mousePos.y = mousePos.y - objectPos.y;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
     }
 }

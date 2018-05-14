@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Door
+    uniqueID: 2145766247
+    locked: 0
   - name: Roof
     uniqueID: 3972879149
     locked: 0
@@ -49,4 +53,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4107817535
+    locked: 0
+  - name: Bullet
+    uniqueID: 3327439147
     locked: 0
