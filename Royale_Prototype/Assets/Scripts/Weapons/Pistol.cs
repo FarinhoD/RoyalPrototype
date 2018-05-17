@@ -7,19 +7,25 @@ public class Pistol : Weapons {
 
     public Transform shotSpawn;
     Animator an;
+    AudioSource ad;
+    public AudioClip clip01;
+    public AudioClip clip02;
+    public AudioClip clip03;
+    
 
     public Text ammoText;
 
     void Awake()
     {
-        //source = GetComponent<AudioSource>();
+        ad = GetComponent<AudioSource>();
+        an = GetComponent<Animator>();
         ammoLeft = ammoAmount;
         ammoClipLeft = ammoClipSize;
     }
 
     // Use this for initialization
     void Start () {
-        an = GetComponent<Animator>();
+  
 	}
 	
 	// Update is called once per frame
@@ -32,6 +38,7 @@ public class Pistol : Weapons {
             nextFire = Time.time + fireRate;
             Instantiate(projectile, shotSpawn.position, shotSpawn.rotation );
             ammoClipLeft--;
+            ad.PlayOneShot(clip01);
             an.SetBool("isShooting", true);
             if (ammoClipLeft == 0)
             {
@@ -58,7 +65,11 @@ public class Pistol : Weapons {
     void Reload()
     {
         int bulletsToReload = ammoClipSize - ammoClipLeft;
-        if (ammoLeft >= bulletsToReload)
+        if (ammoClipLeft == ammoClipSize)
+        {
+
+        }
+        else if (ammoLeft >= bulletsToReload)
         {
             StartCoroutine("ReloadWeapon");
             ammoLeft -= bulletsToReload;
@@ -72,14 +83,18 @@ public class Pistol : Weapons {
         }
         else if (ammoLeft <= 0)
         {
-            //source.PlayOneShot(emptyGunSound);
+            if (Input.GetMouseButtonDown(0))
+            {
+                ad.PlayOneShot(clip03);
+            }
+
         }
     }
 
     IEnumerator ReloadWeapon()
     {
         isReloading = true;
-        //source.PlayOneShot(reloadSound);
+        ad.PlayOneShot(clip02);
         yield return new WaitForSeconds(2);
         isReloading = false;
     }
